@@ -1,10 +1,35 @@
-<section class="tasbeeh">
-    <h2>Tasbeeh Counter</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tasbeeh Counter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🌙 Tasbeeh Counter</h1>
+    <p class="subtitle">Made with ❤️ by Syed Taqi Shah Kazmi</p>
+  </header>
+
+  <section class="tasbeeh">
     <div class="counter-box">
-        <div id="tasbeeh-display">0</div>
-        <div class="counter-buttons">
-            <button onclick="incrementTasbeeh()">Count</button>
-            <button onclick="clearTasbeeh()">Clear</button>
-        </div>
+      <div id="tasbeeh-display">0</div>
+      <div class="counter-buttons">
+        <button id="count-btn">Count</button>
+        <button id="clear-btn">Clear</button>
+        <button id="light-btn">⚡ Lightning</button>
+      </div>
     </div>
-</section>
+  </section>
+
+  <footer>
+    <p>May your zikr be accepted 🤲</p>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
