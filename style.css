@@ -31,7 +31,6 @@ header {
     border-radius: 20px;
     padding: 2em;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    position: relative;
 }
 
 #tasbeeh-display {
@@ -63,24 +62,8 @@ header {
     background-color: #004d40;
 }
 
-#light-btn.glow {
-    box-shadow: 0 0 20px 5px #ffeb3b;
-    background-color: #fdd835;
-    color: #333;
-}
-
 footer {
     margin-top: 3em;
     font-size: 0.9em;
     color: #777;
-}
-
-@media (max-width: 600px) {
-    #tasbeeh-display {
-        font-size: 2em;
-    }
-    .counter-buttons button {
-        font-size: 0.9em;
-        padding: 0.5em 1em;
-    }
 }
