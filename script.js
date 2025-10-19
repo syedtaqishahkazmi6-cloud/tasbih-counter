@@ -11,38 +11,40 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-// ✅ Tasbeeh logic
-const tasbeehDisplay = document.getElementById("tasbeeh-display");
-const countBtn = document.getElementById("count-btn");
-const clearBtn = document.getElementById("clear-btn");
-const lightBtn = document.getElementById("light-btn");
-const tasbeehRef = db.ref("tasbeeh/count");
+// ✅ DOM elements
+document.addEventListener("DOMContentLoaded", () => {
+    const tasbeehDisplay = document.getElementById("tasbeeh-display");
+    const countBtn = document.getElementById("count-btn");
+    const clearBtn = document.getElementById("clear-btn");
+    const lightBtn = document.getElementById("light-btn");
+    const tasbeehRef = db.ref("tasbeeh/count");
 
-// Load saved count
-tasbeehRef.once("value").then(snapshot => {
-    if (snapshot.exists()) {
-        tasbeehDisplay.textContent = snapshot.val();
-    }
-});
+    // Load saved count
+    tasbeehRef.once("value").then(snapshot => {
+        if (snapshot.exists()) {
+            tasbeehDisplay.textContent = snapshot.val();
+        }
+    });
 
-// Count button
-countBtn.addEventListener("click", () => {
-    let current = parseInt(tasbeehDisplay.textContent);
-    current += 1;
-    tasbeehDisplay.textContent = current;
-    tasbeehRef.set(current);
-});
+    // Count button
+    countBtn.addEventListener("click", () => {
+        let current = parseInt(tasbeehDisplay.textContent);
+        current += 1;
+        tasbeehDisplay.textContent = current;
+        tasbeehRef.set(current);
+    });
 
-// Clear button
-clearBtn.addEventListener("click", () => {
-    tasbeehDisplay.textContent = "0";
-    tasbeehRef.set(0);
-});
+    // Clear button
+    clearBtn.addEventListener("click", () => {
+        tasbeehDisplay.textContent = "0";
+        tasbeehRef.set(0);
+    });
 
-// Lightning button
-lightBtn.addEventListener("click", () => {
-    lightBtn.classList.add("glow");
-    setTimeout(() => {
-        lightBtn.classList.remove("glow");
-    }, 500);
+    // Lightning button
+    lightBtn.addEventListener("click", () => {
+        lightBtn.classList.add("glow");
+        setTimeout(() => {
+            lightBtn.classList.remove("glow");
+        }, 500);
+    });
 });
