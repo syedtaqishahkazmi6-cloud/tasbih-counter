@@ -1,17 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const display = document.getElementById("tasbeeh-display");
-    const countBtn = document.getElementById("count-btn");
-    const clearBtn = document.getElementById("clear-btn");
+let count = 0;
 
-    let count = 0;
+function increment() {
+    count += 1;
+    document.getElementById("counter-screen").textContent = count;
+}
 
-    countBtn.addEventListener("click", () => {
-        count += 1;
-        display.textContent = count;
-    });
-
-    clearBtn.addEventListener("click", () => {
-        count = 0;
-        display.textContent = count;
-    });
-});
+function reset() {
+    count = 0;
+    document.getElementById("counter-screen").textContent = count;
+}
